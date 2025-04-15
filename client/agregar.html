@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agregar Producto</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="index.html">📋 Lista de productos</a></li>
+          <li><a href="agregar.html">➕ Agregar producto</a></li>
+          <li><a href="almacen.html">Almacen</a></li>
+        </ul>
+      </nav>
+  <h1>Agregar Producto</h1>
+  <hr>
+      
+  <form id="formulario-articulo" enctype="multipart/form-data">
+      <input type="text" name="codigo" placeholder="Código" required />
+      <input type="text" name="nombre" placeholder="Nombre del artículo" required />
+      <input type="file" name="foto" accept="image/*" />
+      <textarea name="descripcion" placeholder="Descripción"></textarea>
+      <input type="number" name="cantidad" placeholder="Cantidad" required />
+      <input type="number" step="0.01" name="precio" placeholder="Precio" required />
+      <button type="submit">Guardar artículo</button>
+  </form>
+
+  <hr/>
+
+  <script src="script.js"></script>
+</body>
+</html>
