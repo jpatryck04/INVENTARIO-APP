@@ -11,6 +11,8 @@ app.use (express.static(path.join(__dirname, '../client')))
 
 // Rutas
 app.use('/api/inventario', inventarioRoutes);
+app.use('/', require('./routes/inventarioRoutes')); // o como se llame el archivo
+
 
 // Iniciar servidor
 const PORT = 3000;

@@ -60,3 +60,55 @@ exports.delete = (req, res) => {
         res.json({ message: 'Artículo eliminado' });
     });
 };
+exports.reducirCantidad = (req, res) => {
+    let {id} = req.query;
+   
+   
+    Inventario.getById(id, (err, rows) => {
+        if (err) return res.status(500).json({ error: err });
+
+        let articulo = rows[0];
+        if (!articulo) return res.status(404).json({ message: 'Artículo no encontrado' });
+
+        if (articulo.cantidad > 1) {
+            const nuevaCantidad = articulo.cantidad - 1;
+            console.log("Articulo:", articulo);
+            Inventario.update(id, { cantidad: nuevaCantidad }, (err) => {
+                if (err) return res.status(500).json({ error: err });
+                res.json({ message: 'Cantidad reducida', cantidad: nuevaCantidad });
+            });
+        } else {
+            // Si es 1 o menos, lo eliminamos
+            Inventario.delete(id, (err) => {
+                if (err) return res.status(500).json({ error: err });
+                res.json({ message: 'Artículo eliminado' });
+            });
+        }
+    });
+};
+exports.AumentarCantidad = (req, res) => {
+     console.log("AumentarCantidad ejecutándose");
+    let {id} = req.query;
+   
+    Inventario.getById(id, (err, rows) => {
+        if (err) return res.status(500).json({ error: err });
+
+        let articulo = rows[0];
+        if (!articulo) return res.status(404).json({ message: 'Artículo no encontrado' });
+
+        if (articulo.cantidad > 1) {
+            const nuevaCantidad = articulo.cantidad + 1;
+            console.log("Articulo:", articulo);
+            Inventario.update(id, { cantidad: nuevaCantidad }, (err) => {
+                if (err) return res.status(500).json({ error: err });
+                res.json({ message: 'Cantidad reducida', cantidad: nuevaCantidad });
+            });
+        } else {
+            // Si es 1 o menos, lo eliminamos
+            Inventario.delete(id, (err) => {
+                if (err) return res.status(500).json({ error: err });
+                res.json({ message: 'Artículo eliminado' });
+            });
+        }
+    });
+};
