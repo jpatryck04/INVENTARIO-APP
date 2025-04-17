@@ -95,20 +95,12 @@ exports.AumentarCantidad = (req, res) => {
 
         let articulo = rows[0];
         if (!articulo) return res.status(404).json({ message: 'Artículo no encontrado' });
-
-        if (articulo.cantidad > 1) {
+        
             const nuevaCantidad = articulo.cantidad + 1;
             console.log("Articulo:", articulo);
             Inventario.update(id, { cantidad: nuevaCantidad }, (err) => {
                 if (err) return res.status(500).json({ error: err });
                 res.json({ message: 'Cantidad reducida', cantidad: nuevaCantidad });
             });
-        } else {
-            // Si es 1 o menos, lo eliminamos
-            Inventario.delete(id, (err) => {
-                if (err) return res.status(500).json({ error: err });
-                res.json({ message: 'Artículo eliminado' });
-            });
-        }
     });
 };

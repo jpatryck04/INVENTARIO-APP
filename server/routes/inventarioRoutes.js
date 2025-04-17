@@ -28,5 +28,5 @@ router.put('/:id', upload.single('foto'), controller.update);
 router.delete('/:id', controller.delete);
 // router.patch('/:id/reducir', inventarioController.reducirCantidad);
 router.route('/reducir').patch(inventarioController.reducirCantidad);
-router.route('/aumentar').patch(inventarioController.AumentarCantidad)
+router.route('/aumentar').patch(inventarioController.AumentarCantidad);
 module.exports = router;
