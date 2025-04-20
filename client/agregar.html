@@ -7,31 +7,65 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html">📋 Lista de productos</a></li>
-      <li><a href="agregar.html">➕ Agregar producto</a></li>
-      <li><a href="almacen.html?vista=almacen">📦 Almacén</a></li>
-    </ul>
-  </nav>
 
-  <h1>Agregar Producto</h1>
-  
+<!-- Navbar Bootstrap -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #8B0000;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="home.html">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">📋 Lista de productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="agregar.html">➕ Agregar producto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="almacen.html?vista=almacen">📦 Almacén</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  <form id="formulario-articulo" enctype="multipart/form-data">
-    <input type="text" name="codigo" placeholder="Código" required />
-    <input type="text" name="nombre" placeholder="Nombre del artículo" required />
-    <input type="file" name="foto" accept="image/*" />
-    <textarea name="descripcion" placeholder="Descripción"></textarea>
-    <input type="number" name="cantidad" placeholder="Cantidad" required />
-    <input type="number" step="0.01" name="precio" placeholder="Precio" required />
-    <button type="submit">Guardar artículo</button>
+<!-- Contenido principal -->
+<div class="container mt-5">
+  <h1 class="mb-4">Agregar Producto</h1>
+
+  <form id="formulario-articulo" enctype="multipart/form-data" class="card p-4 shadow-sm">
+    <div class="row g-3">
+      <div class="col-md-6">
+        <input type="text" name="codigo" class="form-control" placeholder="Código" required />
+      </div>
+      <div class="col-md-6">
+        <input type="text" name="nombre" class="form-control" placeholder="Nombre del artículo" required />
+      </div>
+      <div class="col-md-12">
+        <textarea name="descripcion" class="form-control" placeholder="Descripción"></textarea>
+      </div>
+      <div class="col-md-6">
+        <input type="number" name="cantidad" class="form-control" placeholder="Cantidad" required />
+      </div>
+      <div class="col-md-6">
+        <input type="number" step="0.01" name="precio" class="form-control" placeholder="Precio" required />
+      </div>
+      <div class="col-md-12">
+        <input type="file" name="foto" class="form-control" accept="image/*" />
+      </div>
+      <div class="col-12 text-end">
+        <button type="submit" class="btn btn-success">Guardar artículo</button>
+      </div>
+    </div>
   </form>
+</div>
 
-  
-
-  <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<!-- Scripts -->
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
+
 </body>
 </html>
