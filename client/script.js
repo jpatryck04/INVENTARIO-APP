@@ -87,9 +87,10 @@ function renderArticuloConCantidad(articulo, contenedor) {
         <p><strong>Cantidad:</strong> ${articulo.cantidad}</p>
         <p><strong>Precio:</strong> $${articulo.precio}</p>
         <div class="acciones">
-    <button onclick="reducirCantidad(${articulo.id})">Reducir Cantidad</button>
-    <button onclick="eliminarArticulo(${articulo.id})">Eliminar</button>
-    <button onclick ="AumentarCantidad(${articulo.id})">Aumentar Producto</button>
+  <button style="background-color: #28a745; color: white;" onclick="reducirCantidad(${articulo.id})">Reducir Cantidad</button>
+  <button style="background-color: #28a745; color: white;" onclick="eliminarArticulo(${articulo.id})">Eliminar</button>
+  <button style="background-color: #28a745; color: white;" onclick="AumentarCantidad(${articulo.id})">Aumentar Producto</button>
+
     
 </div>
     `;

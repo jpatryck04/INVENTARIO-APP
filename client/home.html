@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>(NOMBRE DE LA EMPRESA) - Sistema de Inventario</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .navbar {
+      background-color: #8B0000; /* Color institucional (NOMBRE DE LA EMPRESA) */
+      animation: navbarSlide 0.5s ease-in-out;
+    }
+    .navbar-brand, .nav-link {
+      color: white !important;
+    }
+
+    .header-section {
+      background-color: #8B0000;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      margin-bottom: 50px;
+      animation: slideInTop 1s ease-out;
+    }
+    .header-section h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+    }
+    .header-section p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    .content-section {
+      padding: 60px 20px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .content-section .card {
+      border: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);    
+      border-radius: 15px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .content-section .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card-body h4 {
+      font-size: 1.6rem;
+      color: #0a4d68;
+      font-weight: bold;
+    }
+
+    .footer {
+      background-color: #8B0000;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+      animation: slideInBottom 1s ease-out;
+    }
+
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      opacity: 0;
+      animation: fadeInProduct 1s ease-in forwards;
+      height: 100%; /* Asegura que las tarjetas tengan la misma altura */
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .product-card h5 {
+      font-size: 1.5rem;
+      color: #0a4d68;
+      margin: 10px 0;
+    }
+
+    .product-card p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Asegura que las tarjetas tengan la misma altura */
+    .product-card .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%; /* Asegura que el contenido dentro de la tarjeta se distribuya uniformemente */
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes navbarSlide {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes slideInTop {
+      0% { transform: translateY(-50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideInBottom {
+      0% { transform: translateY(50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInProduct {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="home.html">(NOMBRE DE LA EMPRESA)</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">📋 Lista de productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="agregar.html">➕ Agregar producto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="almacen.html">📦 Almacén</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="header-section">
+    <h1>Bienvenido a (NOMBRE DE LA EMPRESA)</h1>
+    <p>Soluciones tecnológicas de vanguardia para tu empresa y hogar. Gestiona tu inventario de productos tecnológicos de manera rápida, sencilla y eficiente.</p>
+    <p>¡Descubre nuestras soluciones y optimiza tu gestión tecnológica con (NOMBRE DE LA EMPRESA)!</p>
+  </section>
+
+  <!-- SECCIÓN DE SERVICIOS -->
+  <section class="container content-section">
+    <h2 class="text-center mb-5">🔧 Nuestros Servicios</h2>
+    <p class="text-center">En (NOMBRE DE LA EMPRESA), ofrecemos una gama completa de servicios para ayudarte a gestionar y optimizar tus productos tecnológicos. Nuestro sistema de inventario avanzado te permite tener un control total sobre tus artículos, con características innovadoras que mejoran tu eficiencia operativa.</p>
+    
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="product-card">
+          <img src="/image-home/Gestión-de-Inventarios.jpg" alt="Gestión de Inventarios" />
+          <h5>Gestión de Inventarios</h5>
+          <p>Organiza, rastrea y administra tu inventario de productos de manera intuitiva y fácil. Con nuestro sistema, puedes acceder a información detallada en tiempo real.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="product-card">
+          <img src="/image-home/Alertas-de-Stock.jpg" alt="Alertas de stock" />
+          <h5>Alertas de Stock</h5>
+          <p>Recibe notificaciones automáticas cuando el stock de un producto esté bajo o se necesite reordenar, garantizando que nunca te falte inventario.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="product-card">
+          <img src="/image-home/Reportes-Detallados.jpg" alt="Reportes detallados" />
+          <h5>Reportes Detallados</h5>
+          <p>Genera reportes detallados sobre el estado de tu inventario, analizando las tendencias de ventas, productos más vendidos y necesidades de reposición.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS DESTACADOS -->
+  <section class="container content-section">
+    <h2 class="text-center mb-5">📦 Productos Destacados</h2>
+    <div class="row">
+      <!-- Producto 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="product-card">
+          <img src="/image-home/Laptop-HP-Pavilion.jpg" alt="Laptop HP Pavilion" />
+          <h5>Laptop HP Pavilion</h5>
+          <p>Potente laptop con procesador i7, 16GB de RAM y pantalla Full HD. Ideal para trabajos de oficina y edición multimedia.</p>
+          <p><strong>Precio:</strong> $52,700.00</p>
+        </div>
+      </div>
+      <!-- Producto 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="product-card">
+          <img src="/image-home/Dell-UltraSharp-U3225QE.jpg" alt="Dell UltraSharp U3225QE" />
+          <h5>Monitor Dell UltraSharp U3225QE</h5>
+          <p>Monitor de 40 pulgadas con resolución Full HD y tecnología IPS. Perfecto para profesionales del diseño y gamers.</p>
+          <p><strong>Precio:</strong> $12,600.00</p>
+        </div>
+      </div>
+      <!-- Producto 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="product-card">
+          <img src="/image-home/Teclado-Mecánico-Logitech.jpg" alt="Teclado Mecánico Logitech" />
+          <h5>Teclado Mecánico Logitech</h5>
+          <p>Teclado mecánico retroiluminado con switches Cherry MX. Ideal para jugadores y programadores que buscan precisión y comodidad.</p>
+          <p><strong>Precio:</strong> $2,500.00</p>
+        </div>
+      </div>
+            <!-- Producto 4 -->
+      <div class="col-md-4 mb-4">
+        <div class="product-card">
+          <img src="/image-home/altavoz.png" alt="Fantech Beat GS203" />
+          <h5>Bocina Fantech Beat GS203</h5>
+          <p>Altavoz compacto con sonido envolvente y diseño atractivo, perfecto para complementar tu espacio de trabajo.</p>
+          <p><strong>Precio:</strong> $2,500.00</p>
+        </div>
+      </div>
+      <!-- Producto 5 -->
+      <div class="col-md-4 mb-4">
+        <div class="product-card">
+          <img src="/image-home/silla.png" alt="Gaming XCON Zeus-II" />
+          <h5>Silla Gaming XCON Zeus-II</h5>
+          <p>Silla ergonómica diseñada para largas jornadas frente al computador, brindando comodidad y soporte.</p>
+          <p><strong>Precio:</strong> $8,995.00</p>
+        </div>
+      </div>
+       <!-- Producto 6 -->
+       <div class="col-md-4 mb-4">
+        <div class="product-card">
+          <img src="/image-home/mouse.jpg" alt="Logitech G502 HERO" />
+          <h5>Mouse Logitech G502 HERO</h5>
+          <p>Mouse gaming de alto rendimiento, ideal para juegos y tareas que requieren precisión. Con un sensor HERO 25K, DPI ajustable y 11 botones programables, es perfecto para personalizar tu experiencia.</p>
+          <p><strong>Precio:</strong> $3,000.00</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 (NOMBRE DE LA EMPRESA). Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
